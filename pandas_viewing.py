@@ -1,4 +1,6 @@
 import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
 
 mlb = pd.read_csv("batting.csv")
 mlb.dropna()
@@ -16,6 +18,10 @@ top_avg = mlb.sort_values("AVG",ascending=False).head(10)
 top_obp = mlb.sort_values("OBP",ascending=False).head(10)
 top_slg = mlb.sort_values("SLG",ascending=False).head(10)
 
-print(top_avg[["Name","AVG"]])
-print(top_obp[["Name","OBP"]])
-print(top_slg[["Name","SLG"]])
+# print(top_avg[["Name","AVG"]])
+# print(top_obp[["Name","OBP"]])
+# print(top_slg[["Name","SLG"]])
+
+sns.lineplot(x=top_avg["Name"],y=top_avg["AVG"])
+plt.title("Top 10 players in AVG 2023")
+plt.show()
