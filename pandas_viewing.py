@@ -22,6 +22,6 @@ top_slg = mlb.sort_values("SLG",ascending=False).head(10)
 # print(top_obp[["Name","OBP"]])
 # print(top_slg[["Name","SLG"]])
 
-sns.lineplot(x=top_avg["Name"],y=top_avg["AVG"])
-plt.title("Top 10 players in AVG 2023")
+sns.lineplot(x=top_slg["Name"],y=top_slg["SLG"])
+plt.title("Top 10 players in SLG 2023")
 plt.show()
